@@ -1,4 +1,4 @@
-package com.example.robot001;
+package com.example.robot001.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+
+import com.example.robot001.R;
+import com.example.robot001.data.AccessPoint;
 
 import java.util.List;
 

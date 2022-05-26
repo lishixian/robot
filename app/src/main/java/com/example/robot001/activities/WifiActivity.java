@@ -1,4 +1,4 @@
-package com.example.robot001;
+package com.example.robot001.activities;
 
 import android.Manifest;
 import android.content.BroadcastReceiver;
@@ -29,6 +29,10 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.robot001.R;
+import com.example.robot001.adapter.WifiListAdapter;
+import com.example.robot001.data.AccessPoint;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -63,7 +67,7 @@ public class WifiActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_wifi);
         wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         if (wifiManager == null) {
             finish();

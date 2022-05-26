@@ -1,4 +1,4 @@
-package com.example.robot001;
+package com.example.robot001.data;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -129,8 +129,6 @@ public class AccessPoint implements Parcelable, Comparable<AccessPoint> {
                 }
             }
             switch (state) {
-                case IDLE:
-                    return context.getString(R.string.network_wifi_status_idle);
                 case SCANNING:
                     return context.getString(R.string.network_wifi_status_scanning);
                 case CONNECTING:
