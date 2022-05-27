@@ -2,21 +2,20 @@ package com.example.robot001.data;
 
 public class Active {
 
-    private String name;
-    private Class action;
+    private final String name;
+    private final Class<?> actionClass;
 
-    public Active(String name, Class action) {
+    public Active(String name, Class<?> actionClass) {
         this.name = name;
-        this.action = action;
-
+        this.actionClass = actionClass;
     }
 
     public String getName() {
         return name;
     }
 
-    public Class getAction() {
-        return action;
+    public Class<?> getActionClass() {
+        return actionClass;
     }
 }
 

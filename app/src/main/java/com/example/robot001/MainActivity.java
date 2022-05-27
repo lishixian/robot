@@ -24,9 +24,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void initList(){
         mActiveList.add(new Active("WifiActivity", WifiActivity.class));
-        mActiveList.add(new Active("WifiActivity", WifiActivity.class));
-        mActiveList.add(new Active("WifiActivity", WifiActivity.class));
-        mActiveList.add(new Active("WifiActivity", WifiActivity.class));
     }
 
     @Override
@@ -45,9 +42,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, RecyclerView.VERTICAL));
         adapter.setOnItemClickListener(position -> {
-            Log.d(TAG, "--lisx--initView:"+ mActiveList.size() + ",position:" + position);
             Active active = mActiveList.get(position);
-            Intent intent = new Intent(this,active.getAction());
+            Intent intent = new Intent(this,active.getActionClass());
             startActivity(intent);
         });
 
