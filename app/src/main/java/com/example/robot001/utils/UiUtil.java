@@ -13,16 +13,10 @@ import android.text.TextUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.text.style.ForegroundColorSpan;
 import android.util.DisplayMetrics;
-import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.TranslateAnimation;
 import android.widget.TextView;
 
 import androidx.annotation.DrawableRes;
 import androidx.core.content.ContextCompat;
-
-import com.iflyrec.sdk.lib_app.jzapp.utils.sys.AppUtil;
-import com.iflyrec.sdk.lib_app.jzapp.utils.sys.DeviceUtil;
 
 
 /**
@@ -125,7 +119,7 @@ public class UiUtil {
     }
 
     public static String getDynaTime(String ctime) {
-        int time = AppUtil.string2Int(ctime);
+        int time = 111;//AppUtil.string2Int(ctime);
         int cstime = (int) (System.currentTimeMillis() / 1000);
         int dtime = cstime - time;
         String stime = "";
@@ -199,21 +193,21 @@ public class UiUtil {
         return !TextUtils.isEmpty(planId) && !hasShowPlanLocation;
     }
 
-    /**
-     * 开始评论的动画
-     *
-     * @param context 上下文
-     * @param view    控件
-     */
-    public static void startCommentAnimation(Context context, View view) {
-        TranslateAnimation translateAnimation = new TranslateAnimation(Animation.ABSOLUTE, DeviceUtil.dip2px(context, 60)
-                , Animation.ABSOLUTE, 0
-                , Animation.ABSOLUTE, 0
-                , Animation.ABSOLUTE, 0);
-        translateAnimation.setDuration(1000);
-        if (view == null) return;
-        view.startAnimation(translateAnimation);
-    }
+//    /**
+//     * 开始评论的动画
+//     *
+//     * @param context 上下文
+//     * @param view    控件
+//     */
+//    public static void startCommentAnimation(Context context, View view) {
+//        TranslateAnimation translateAnimation = new TranslateAnimation(Animation.ABSOLUTE, DeviceUtil.dip2px(context, 60)
+//                , Animation.ABSOLUTE, 0
+//                , Animation.ABSOLUTE, 0
+//                , Animation.ABSOLUTE, 0);
+//        translateAnimation.setDuration(1000);
+//        if (view == null) return;
+//        view.startAnimation(translateAnimation);
+//    }
 
     public static CharSequence getSafeString(CharSequence source, CharSequence defaultText) {
         return TextUtils.isEmpty(source) ? defaultText : source;

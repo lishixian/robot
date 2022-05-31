@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.robot001.activities.ControlActivity;
 import com.example.robot001.activities.WifiActivity;
 import com.example.robot001.adapter.ActiveAdapter;
 import com.example.robot001.data.Active;
@@ -23,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
     private final List<Active> mActiveList = new ArrayList<>();
 
     private void initList(){
-        mActiveList.add(new Active("WifiActivity", WifiActivity.class));
+        mActiveList.add(new Active("WiFi连接", WifiActivity.class));
+        mActiveList.add(new Active("主页", ControlActivity.class));
     }
 
     @Override
@@ -34,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        RecyclerView recyclerView =  findViewById(R.id.recyclerView);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         initList();
